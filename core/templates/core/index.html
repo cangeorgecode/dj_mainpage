@@ -3,34 +3,25 @@
 
 {% include 'core/header.html' %}
 {% include 'core/hero.html' %}
+
 <div class="container pt-4 text-center">
+  <h3>Free and Premium Resources</h3>
     <table class="table">
         <thead>
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Category</th>
           </tr>
         </thead>
         <tbody>
+          {% for r in resources %}
           <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
+            <td><a href="{{ r.url }}" target="_blank" >{{ r.name }}</a></td>
+            <td>{{ r.desc }}</td>
+            <td>{{ r.cat }}</td>
           </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
-            <td>@twitter</td>
-          </tr>
+         {% endfor %}
         </tbody>
       </table>
 </div>

@@ -2,6 +2,7 @@ from django.db import models
 
 class Resource(models.Model):
     name = models.CharField(max_length=255)
+    desc = models.CharField(max_length=255, null=True, blank=True)
     url = models.CharField(max_length=255)
     cat = models.CharField(max_length=50)
 
